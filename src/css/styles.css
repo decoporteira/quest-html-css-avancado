@@ -1,0 +1,139 @@
+html{
+  font-size: 62.5%;
+}
+body{
+  background-color: #674BB1;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+.main {
+  display: grid;
+  grid-template-areas: "header header"
+                        "image texts" 
+                          "footer footer";
+  grid-template-columns: 60% 40%;
+  background: url('../../images/bg-desktop.svg');
+  max-width: 1440px;
+  height: 800px;
+  margin: 0 auto;
+  padding: 0  70px;
+  background-position: left top; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
+.main .header{
+  grid-area: header;
+  display: flex;
+  padding: 50px 0 20px 0;
+  justify-content: space-between;
+}
+.main .header .logo {
+  width: 220px;
+}
+.main .image{
+  grid-area: image;
+}
+
+.main .texts{
+  grid-area: texts;
+  padding-left: 60px;
+  padding-right: 30px;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.main .texts h1{
+  color: white;
+  font-weight: bold;
+  margin-bottom: 45px;
+  font-size: 4rem;
+}
+
+.main .texts .text{
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 50px;
+}
+
+.main .texts .btn {
+  background-color: white;
+  border-radius: 50px;
+  color: #674BB1;
+  padding: 16px 65px;
+  font-size: 1.9rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.3s;
+  
+}
+.main .texts .btn:hover{
+  background-color: #674BB1;
+  color: white;
+}
+
+.main .footer{
+  grid-area: footer;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  margin-right: 20px;
+}
+.main .footer i {
+  font-size: 3.5rem;
+  margin-left: 20px;
+  color: white;
+}
+
+@media(max-width: 1024px) {
+  .main .texts{
+   padding-top: 0;
+  }
+}
+
+@media(max-width: 425px) {
+  .main{
+    background: url('../../images/bg-mobile.svg') left top no-repeat;
+    grid-template-areas:  "header"
+                          "image " 
+                          "texts"
+                          "footer";
+    grid-template-columns: 1fr;
+    background-size: 100%;
+  }
+  .main .header{
+    justify-content: left;
+  }
+  .main .header .logo {
+    width: 160px;
+  }
+  .main .image{
+    padding-bottom: 40px;
+  }
+  .main .texts{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+  }
+  .main .texts h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  .main .texts .text{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .main .texts .btn {
+    margin: 0 auto;
+    padding: 10px 65px;
+    font-size: 1.4rem;
+  }
+  .main .footer {
+    justify-content: center;
+    margin: 30px 10px 0 10px;
+  }
+  .main .footer i {
+    font-size: 2.5rem;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
