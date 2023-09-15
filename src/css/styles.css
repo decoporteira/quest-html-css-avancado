@@ -2,9 +2,15 @@ html{
   font-size: 62.5%;
 }
 body{
+  
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  background: url('../../images/bg-desktop.svg');
+  background-position: left top; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
   background-color: #674BB1;
-  font-family: 'Roboto', sans-serif;
-  height: 100%;
+  background-size: cover;
 }
 .main {
   display: grid;
@@ -12,32 +18,34 @@ body{
                         "image texts" 
                           "footer footer";
   grid-template-columns: 60% 40%;
-  background: url('../../images/bg-desktop.svg');
+  grid-template-rows: 225px auto;
+  
   max-width: 1440px;
-  height: 800px;
+  height: 100vh;
   margin: 0 auto;
   padding: 0  70px;
-  background-position: left top; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
+ 
 }
 .main .header{
   grid-area: header;
   display: flex;
-  padding: 50px 0 20px 0;
+  margin-bottom: 80px;
+  min-height: 75px;
+  padding-top: 60px;
+  height: auto;
   justify-content: space-between;
+  font-size: 0%
+
+  
 }
-.main .header .logo {
-  width: 220px;
-}
+
 .main .image{
   grid-area: image;
 }
 
 .main .texts{
   grid-area: texts;
-  padding-left: 60px;
-  padding-right: 30px;
-  padding-top: 70px;
+  padding-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -45,29 +53,31 @@ body{
 
 .main .texts h1{
   color: white;
-  font-weight: bold;
-  margin-bottom: 45px;
+  font-weight: 600;
+  margin-bottom: 25px;
   font-size: 4rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .main .texts .text{
   color: white;
   font-size: 1.8rem;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
 }
 
 .main .texts .btn {
   background-color: white;
   border-radius: 50px;
   color: #674BB1;
-  padding: 16px 65px;
+  padding: 14px 63px;
   font-size: 1.9rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: 0.3s;
+  font-family: Poppins, sans-serif;
   
 }
 .main .texts .btn:hover{
-  background-color: #674BB1;
+  background-color: #e980e7;
   color: white;
 }
 
@@ -83,22 +93,54 @@ body{
   margin-left: 20px;
   color: white;
 }
+.main .footer i:hover {
+  font-size: 3.5rem;
+  margin-left: 20px;
+  color: #e980e7;
+}
+.icons_btns {
+  display: flex;
+}
 
-@media(max-width: 1024px) {
+
+@media(max-width: 900px) {
+  .main {
+    grid-template-areas:  "header"
+                          "image " 
+                          "texts"
+                          "footer";
+    grid-template-columns: 2fr;
+  }
   .main .texts{
-   padding-top: 0;
+    text-align: center;
+    padding: 0 15%;
+  }
+  .main .texts .btn {
+    margin: 0 auto;
+    padding: 10px 65px;
+    font-size: 1.4rem;
+  }
+  .main .footer {
+    justify-content: center;
+    margin: 30px 10px 30px 10px;
+  }
+  .main .footer i {
+    font-size: 3.5rem;
+    margin-right: 20px;
+    color: white;
   }
 }
 
-@media(max-width: 425px) {
+@media(max-width: 375px) {
   .main{
+    padding: 0 45px;
     background: url('../../images/bg-mobile.svg') left top no-repeat;
     grid-template-areas:  "header"
                           "image " 
                           "texts"
                           "footer";
     grid-template-columns: 1fr;
-    background-size: 100%;
+    
   }
   .main .header{
     justify-content: left;
@@ -106,21 +148,20 @@ body{
   .main .header .logo {
     width: 160px;
   }
-  .main .image{
-    padding-bottom: 40px;
+  
+  .main .texts h1{
+    font-size: 2.2rem;
+    margin-bottom: 15px;
   }
+  
+  
   .main .texts{
-    padding-left: 10px;
-    padding-right: 10px;
     text-align: center;
   }
-  .main .texts h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
+  
   .main .texts .text{
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
   .main .texts .btn {
     margin: 0 auto;
@@ -136,4 +177,11 @@ body{
     margin-left: 10px;
     margin-right: 10px;
   }
+  .main .footer i:hover {
+    font-size: 2.5rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #e980e7;
+  }
+  
 }
